@@ -1,0 +1,51 @@
+[{
+        "precio": 20000,
+        "id": 1,
+        "title": "Promo finde fuera de temporada",
+        "thumbnailUrl": "https://picsum.photos/id/301/600"
+    },
+    {
+        "precio": 90000,
+        "id": 2,
+        "title": "Promo finde con 6 amigos",
+        "thumbnailUrl": "https://picsum.photos/id/390/600"
+    },
+    {
+        "precio": 25000,
+        "id": 3,
+        "title": "Promo fiestas",
+        "thumbnailUrl": "https://picsum.photos/id/407/600"
+    },
+    {
+        "precio": 28000,
+        "id": 4,
+        "title": "Promo relax finde largo",
+        "thumbnailUrl": "https://picsum.photos/id/449/600"
+    },
+    {
+        "precio": 15000,
+        "id": 6,
+        "title": "Promo solari",
+        "thumbnailUrl": "https://picsum.photos/id/447/600"
+    },
+    {
+        "precio": 30000,
+        "id": 1,
+        "title": "Promo en pareja",
+        "thumbnailUrl": "https://picsum.photos/id/1083/600"
+    },
+    {
+        "precio": 2000,
+        "id": 5,
+        "title": "Extra escurción",
+        "thumbnailUrl": "https://picsum.photos/id/190/600"
+    },
+    {
+        "precio": 1500,
+        "id": 5,
+        "title": "Extra kit de playa",
+        "thumbnailUrl": "https://picsum.photos/id/154/600"
+    }
+
+
+]
