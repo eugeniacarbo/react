@@ -12,11 +12,17 @@ function App() {
       <NavBar>
       </NavBar>
       <div className='prueba' >
-        <p>Cabañas El Refugio</p>    
+            <p>Cabañas El Refugio</p>
+        <br />    
+        <h1>Bienvenido a tus próximas vacaciones.</h1>
+        <br />
+        <br />
+        <br />
       </div>
-        <ItemListContainer titulo="Bienvenido a tus próximas vacaciones" subtitulo="Veni a disfrutar y relajarte" />
+        <ItemListContainer/>
     </div>
   )
 }
+
 
 export default App
