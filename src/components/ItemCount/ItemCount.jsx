@@ -47,23 +47,15 @@ const ItemCount = ( {initial=1, stock=1, onAdd} ) => {
   
   return (
     <div className="center">
-    <div className="contenedorContador">
-        <div>
-          <img src="https://picsum.photos/id/301/600" alt="" />
-        </div>
-        <div>
-          <h3>Producto Prueba</h3>
-        </div>
-        <div className="container d-flex flex-row justify-content-center">
+              <div className="container d-flex flex-row justify-content-center">
           <button className="btn btn-primary btn-sm" onClick={handdleMenos}>-</button>
-          <input type="text" value={count} className="count" />
+          <input type="text" value={count} className="count" readOnly />
           <button className="btn btn-primary btn-sm" onClick={handdleMas}>+</button>
         </div>
         <div className="container">
-          <button className="btn btn-success mt-4" onClick={agregarCarrito}>Agregar al carrito</button>
+          <button className="btn btn-success mt-4" onClick={agregarCarrito} >Agregar al carrito</button>
         </div>
-      </div>
-  </div>
+    </div>
   )
 }
 
