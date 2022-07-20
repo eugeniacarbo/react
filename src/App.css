@@ -218,6 +218,42 @@ button {
   font-size: calc(10px + 2vmin);
 }
 
+@keyframes color-change {
+  0% { color: red; }
+  33% { color: green; }
+  66% { color: blue; }
+  100% { color: red; }
+}
+
+.count {
+  width: 60px;
+  text-align: center;
+  margin: 0 10px;
+}
+
+.productoTitulo {
+  font-size: 1.2rem;
+}
+
+.spinner {
+  border: 15px solid rgba(0, 0, 0, .1);
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border-left-color: #1b78cf;
+
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 @media screen and (max-width: 1921px) {
 
   .navLinks li a {
