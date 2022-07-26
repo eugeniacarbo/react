@@ -15,7 +15,7 @@ const NavBar = () => {
         <nav className="navbar navbar-expand-xl navbar-custom">
             <div className="container-fluid">
                 <NavLink to='/'>
-                <span className="navbar-brand ms-4" id='containerLogo'><img src="../../../assets/images/losGamaLogo.svg" id='logoGU' alt="LogoMarca" /></span>
+                <span className="navbar-brand ms-4" id='containerLogo'><img src="https://picsum.photos/id/301/600" id='logoGU' alt="LogoMarca" /></span>
                 </NavLink>
                
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
