@@ -11,7 +11,7 @@ const ItemCount = ( {initial=1, stock=1, onAdd} ) => {
       }else {
         console.log("No hay mas disponible")
         Toastify({
-          text: "No mas promos",
+          text: "No hay mas promos",
           duration: 3000,
           close: true,
           gravity: "top", 
