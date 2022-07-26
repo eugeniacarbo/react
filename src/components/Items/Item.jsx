@@ -7,9 +7,9 @@ const Item = ({ prod }) => {
   return (
       <div            
           className='col-md-4 p-1'
-          // key={prod.id}                                                           
-      >                    
-          <div className="card w-100 mt-5" >
+     </div>
+                                                               
+         <div className="card w-100 mt-5" >
               <div className="card-body">
                   <img src={prod.img} alt='' className='w-50' />                                                        
               </div>
