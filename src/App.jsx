@@ -1,16 +1,26 @@
-import { useState } from 'react'
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import './App.css'
 import NavBar from './components/navBar/navbar'
-import Cartwidget from './components/CartWidget/Cartwidget'
 import ItemListContainer from './components/ItemListContainer/ItemListContainer'
-import {} from '@fortawesome/react-fontawesome'
-import {} from '@fortawesome/free-solid-svg-icons'
+import ItemDetailContainer from './components/Items/ItemDetailContainer'
+import Cart from './components/Cart/Cart'
+import NotFound from './components/NotFound/NotFound'
 
 function App() {
   return (
+     <BrowserRouter>
     <div className="App">
       <NavBar>
-      </NavBar>
+         <Routes>
+          <Route path='/' element={ <ItemListContainer/>} />
+          <Route path='/categoria/:categoriaId' element={ <ItemListContainer/>} />
+          <Route path='/detail/:detailId' element={ <ItemDetailContainer/> } />
+          <Route path='/cart' element={ <Cart/> } />  
+          <Route path='/NotFound' element={ <NotFound/> }/>
+
+          <Route path='*' element={ <Navigate to='/NotFound'/> }/>
+        </Routes>
+      
       <div className='prueba' >
             <p>Cabañas El Refugio</p>
         <br />    
@@ -19,10 +29,10 @@ function App() {
         <br />
         <br />
       </div>
-        <ItemListContainer/>
     </div>
+    </BrowserRouter>   
+
   )
 }
-
 
 export default App
