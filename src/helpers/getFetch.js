@@ -41,3 +41,16 @@ let productos = [{
         img: ""
     },
 ]
+export const getFetch = (id) => {   
+    
+    return new Promise((resolve, reject)=> {
+        setTimeout(()=>{
+            if (id) {
+                resolve(productos.find(producto => producto.id === id))
+            } else {
+                resolve(productos)
+            }
+        }, 1200)
+    })
+
+}
