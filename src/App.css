@@ -120,119 +120,13 @@ body {
   margin: 0 10px;
 }
 
-.contenedorContador {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-  flex-direction: column;
-  background: #8F3838;
-  width: 500px;
-  height: 600px;
-}
-
-.center {
-  display: flex;
-  justify-content: center;
-}
-@keyframes gradient {
-0% {
-    background-position: 0 0;
-    height: 3px;
-}
-50% {
-  background-position: 18.75em 31.25em;
-  height: 3.4px;
-}
-100% {
-  background-position: 0.1em 0.1em;
-  bottom: 3.3px;
-}
-}
-
-
-.navbar-custom {
-  background: rgb(114, 114, 255);
-}
-
-.nav-link {
-  font-family: var(--fontmain);
-}
-
-.navLinks li a {
-  color: black;
-  transition: 0.4s;
-  font-weight: 600;
-  font-size: 1.3rem;
-}
-
-.navLinks li a:hover {
-  color: #8F3838;
-  transform: scale(1.1);
-}
-
-.iconos {
-  width: 30px;
-  
-}
-
-.iconosFa {
-  font-size: 25px;
-}
-
-
-.iconoCart {
-  width: 60px;
-}
-
-#logoGU {
-  width: 100px;
-}
-
-.carrito {
-  display: flex;
-  text-decoration: none;
-}
-
-
-.carrito .iconoCart {
-  margin: 0 15px;
-}
-
-.carrito p {
-  color: #8F3838;
-  font-size: 1.3rem;
-}
-
-.carrito:hover {
-  animation: float 0.4s ease-out 3;
-}
-
-@keyframes float {
-  50% {
-     transform: translate(0, 8px);
-  }
-}
-
-button {
-  font-size: calc(10px + 2vmin);
-}
-
-@keyframes color-change {
-  0% { color: red; }
-  33% { color: green; }
-  66% { color: blue; }
-  100% { color: red; }
-}
-
-.count {
-  width: 60px;
-  text-align: center;
-  margin: 0 10px;
-}
-
 .productoTitulo {
   font-size: 1.2rem;
+}
+
+.productoStock {
+  margin-top: 2rem;
+  font-size: 0.9rem;
 }
 
 .spinner {
@@ -256,6 +150,10 @@ button {
   }
 }
 
+
+/* Detalles */
+
+
 .detailCount {
   display: block;
   margin-top: 300px;
@@ -264,7 +162,6 @@ button {
 .imgDetail {
   margin-top: 100px;
 }
-
 
 @media screen and (max-width: 1921px) {
 
