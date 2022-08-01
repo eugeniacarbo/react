@@ -22,15 +22,13 @@ function App() {
         </Routes>
       
       <div className='prueba' >
-            <p>Cabañas El Refugio</p>
+        <br />
         <br />    
-        <h1>Bienvenido a tus próximas vacaciones.</h1>
-        <br />
-        <br />
+        <p>Bienvenido a tus próximas vacaciones.  © </p>
         <br />
       </div>
     </div>
-    </BrowserRouter>   
+    </BrowserRouter>  
 
   )
 }
