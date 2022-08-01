@@ -1,5 +1,5 @@
 import { useState } from "react";
-import React from 'react'
+
 
 const ItemCount = ( {initial=1, stock=1, onAdd} ) => {
 
@@ -25,24 +25,27 @@ const ItemCount = ( {initial=1, stock=1, onAdd} ) => {
 
     };
     const handdleMenos = () => {
-      if (count > 1) {
-        setCount(count - 1)
+    if (count > initial) {
+      setCount(count - 1)
       }
     }
 
     const agregarCarrito = () => {
-      Toastify({
-        text: "Agregado Al Carrito.",
-        duration: 3000,
-        close: true,
-        gravity: "top", 
-        position: "right", 
-        stopOnFocus: true, 
-        style: {
-          background: "#22B14C",
-        },
-      }).showToast();
+    if (count < stock) {
+      onAdd(count)
     }
+    Toastify({
+      text: "Producto Agregado Al Carrito.",
+      duration: 3000,
+      close: true,
+      gravity: "top",
+      position: "right",
+      stopOnFocus: true,
+      style: {
+        background: "#22B14C",
+      },
+    }).showToast();
+  }
 
   
   return (
