@@ -24,11 +24,6 @@ const ItemListContainer = () => {
     }
   }, [categoriaId])
 
-
- const onAdd = (cant)=>{
-  console.log(`la cantidad es: ${cant}`)
-  }
- console.log(productos)
   
 
   return (
