@@ -34,18 +34,7 @@
         "title": "Promo en pareja",
         "thumbnailUrl": "https://picsum.photos/id/1083/600"
     },
-    {
-        "precio": 2000,
-        "id": 5,
-        "title": "Extra escurción",
-        "thumbnailUrl": "https://picsum.photos/id/190/600"
-    },
-    {
-        "precio": 1500,
-        "id": 5,
-        "title": "Extra kit de playa",
-        "thumbnailUrl": "https://picsum.photos/id/154/600"
-    }
+
 
 
 ]
