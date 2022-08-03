@@ -25,7 +25,7 @@ const NavBar = () => {
                 <div className="collapse navbar-collapse" id="navbarText">
                 <ul className="navbar-nav m-auto mb-2 mb-lg-0 navLinks">
                     <li className="nav-item me-2">
-                     <NavLink className='nav-link' to='/categoria/promociones'>Tromociones</NavLink>
+                     <NavLink className='nav-link' to='/categoria/promociones'>Promo finde fuera de temporada</NavLink>
                     
                         <img className='iconos' src="https://picsum.photos/id/301/600" alt="" />
                     </li>
