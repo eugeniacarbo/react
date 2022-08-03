@@ -1,15 +1,20 @@
-import React from 'react'
+import { Link } from 'react-router-dom'
 import ItemCount from '../ItemCount/ItemCount'
+import { useState } from 'react'
+import { useCartContext } from '../Cart/CartContext'
 
 const ItemDetail = ({producto}) => {
+
+    const {agregarCarrito} = useCartContext()
 
     const [toCart, setTocart] = useState(true)
 
     const onAdd = (cant) => {
         console.log(`La cantidad es:  ${cant}`)
+        agregarCarrito({...producto, cantidad: cant})
         setTocart(false)
       }
-      
+
 
 return (
     <div className='d-flex justify-content-around'>
@@ -26,13 +31,17 @@ return (
                   {toCart? 
                     <ItemCount initial={1} stock={producto.stock} onAdd={onAdd}></ItemCount>
                     :
-                    <Link to="/Cart"
+                      <Link to="/Cart">
+                        {/* <div>
+                            <h1> Usted ha seleccionado productos</h1>
+                        </div> */}
                     <button className="btn btn-outline-dark btn-block">
                     Ir al carrito.
                     </button>
                     <br />
                     </Link>     
                 }   
+                
                 <div className='card-footer text-muted'>
                 stock: {producto.stock}
             </div>
