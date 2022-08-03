@@ -1,45 +1,39 @@
 let productos = [{
         id: "1",
         marca: "El Refugio 1",
-        categoría: "Promos",
+        categoría: "promociones",
         nombre: "Promo finde fuera de temporada",
         img: ""
     },
     {
         id: "2",
         marca: "El Refugio 2",
-        categoría: "Promos",
-        nombre: "Promo finde con 6 amigos",
+        categoría: "amigos",
+        nombre: "Vacaciones con amigo",
         img: ""
     },
     {
         id: "3",
         marca: "El Refugio 2",
-        categoría: "Promos",
-        nombre: "Promo fiestas",
+        categoría: "familia",
+        nombre: "Promo en familia",
         img: ""
     },
     {
         id: "4",
         marca: "El Refugio 1",
-        categoría: "Promos",
-        nombre: "Promo relax finde largo",
+        categoría: "Pareja",
+        nombre: "Promociones en pareja",
         img: ""
     },
     {
         id: "5",
         marca: "El Refugio 1",
-        categoría: "Promos",
-        nombre: "Promo solari",
+        categoría: "solo",
+        nombre: "Vacaciones solo",
         img: ""
     },
-    {
-        id: "6",
-        marca: "El Refugio 1",
-        categoría: "Promos",
-        nombre: "Promo en pareja",
-        img: ""
-    },
+   
 ]
 export const getFetch = (id) => {   
     
