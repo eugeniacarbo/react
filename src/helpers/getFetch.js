@@ -2,6 +2,7 @@ let productos = [{
         id: "1",
         marca: "El Refugio 1",
         categoría: "promociones",
+        precio: 15000,
         nombre: "Promo finde fuera de temporada",
         img: ""
     },
@@ -9,6 +10,7 @@ let productos = [{
         id: "2",
         marca: "El Refugio 2",
         categoría: "amigos",
+        precio: 25000,
         nombre: "Vacaciones con amigo",
         img: ""
     },
@@ -16,6 +18,7 @@ let productos = [{
         id: "3",
         marca: "El Refugio 2",
         categoría: "familia",
+        precio: 35000,
         nombre: "Promo en familia",
         img: ""
     },
@@ -23,6 +26,7 @@ let productos = [{
         id: "4",
         marca: "El Refugio 1",
         categoría: "Pareja",
+        precio: 15000,
         nombre: "Promociones en pareja",
         img: ""
     },
@@ -30,6 +34,7 @@ let productos = [{
         id: "5",
         marca: "El Refugio 1",
         categoría: "solo",
+        precio: 10000,
         nombre: "Vacaciones solo",
         img: ""
     },
