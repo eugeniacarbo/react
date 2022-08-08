@@ -1,27 +1,46 @@
-import { useCartContext } from "./CartContext"
+import { useCartContext } from "../../Context/CartContext"
 
 const Cart = () => {
   
-   const {cartList} = useCartContext()
+    const {cartList, vaciarCarrito} = useCartContext()
    
   return (
-    <div>
-     <h1>Cart</h1>
-    
-         <ul>
-            {cartList.map(item => (
+      <div className="container-md cartContainer">
+        <div className="row">
+          <div className="col-sm">" "</div>
+        </div>
+        <div className="row">
+          <div className="col-sm"><h2>Carrito.</h2></div>
+        </div>
+        <div className="row">
+          <div className="col-md-6">Checkout de vacaciones</div>
+          <div className="col-md-6"> <p className="textoCarrito font-weight-bold">Vacaciones seleccionadas</p>
+          <button className="btn btn-outline-danger" onClick={vaciarCarrito}> Vaciar Carrito. </button>
+          <ul className="mt-4">
+          {cartList.map(item => (
               <li key={item.id}>
-                <div className="container">
-                <img className="imagenCarrito" src={item.img} alt="" />
-                {item.nombre} - {item.cantidad}
+                <div className="card">
+                <div className="card-body">
+                  <img src={item.img} alt='' className='w-50' />                                                        
+                </div>
+                  <div className="card-body">
+                    <p> {item.nombre }</p>
+                    <p> Cantidad: {item.cantidad}</p>
+                    <p>Precio: {item.precio * item.cantidad} $ </p>
+                  </div>
                 </div>
               </li>
             ))}
           </ul>
-</div>
+          </div>
+        </div>
+        <div className="row">
+          <div className="col-md-12">
+            Aceptamos Visa y Mastercard
+          </div>
+        </div>
+      </div>
   )
 }
-    
-
 
 export default Cart
