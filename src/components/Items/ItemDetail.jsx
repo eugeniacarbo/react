@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import ItemCount from '../ItemCount/ItemCount'
 import { useState } from 'react'
-import { useCartContext } from '../Cart/CartContext'
+import { useCartContext } from '../../Context/CartContext'
 
 const ItemDetail = ({producto}) => {
 
@@ -41,7 +41,8 @@ return (
                     <br />
                     </Link>     
                 }   
-                
+              
+                </div>
                 <div className='card-footer text-muted'>
                 stock: {producto.stock}
             </div>
