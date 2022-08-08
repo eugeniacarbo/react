@@ -21,6 +21,7 @@ function App() {
           <Route path='/NotFound' element={ <NotFound/> }/>
 
           <Route path='*' element={ <Navigate to='/NotFound'/> }/>
+            
         </Routes>
       
       <div className='prueba' >
