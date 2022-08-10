@@ -4,6 +4,7 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faDesktop, faKeyboard, faMemory, faMicrochip} from '@fortawesome/free-solid-svg-icons'
 import { NavLink } from 'react-router-dom'
 import { Link } from 'react-router-dom'
+import { useCartContext } from '../../Context/CartContext'
 
 
 
@@ -50,18 +51,20 @@ const NavBar = () => {
                     <img className='iconos' src="https://picsum.photos/id/449/600" alt="" />
                     </li>
                     
-                </ul>
+           </ul>
                 </div>
-                  <div className='me-4'>
+                <div className='me-4'>
                     <Link to='/cart'>
                     <Cartwidget/>
                     </Link>
+                    <p className='cantidadCarrito'>{ cantidadTotal() !== 0 && cantidadTotal() }</p>
                 </div>
             </div>
 
         </nav>
     </header>
   )
+
 
 }
 
