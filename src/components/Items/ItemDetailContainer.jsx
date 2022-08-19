@@ -4,6 +4,14 @@ import { getFetch } from '../../helpers/getFetch'
 import ItemDetail from './ItemDetail'
 import { getFirestore, doc, getDoc } from 'firebase/firestore'
 
+
+useEffect(() =>{
+  const db = getFirestore() 
+  const queryProducto = doc (db, 'productos', '0VETbnqV6Cz89Sf9Ih3I')
+  getDoc(queryProducto)
+  .then(resp=> console.log(resp))
+}, [])
+
 const ItemDetailContainer = () => {
 
     const [producto, setProducto] = useState({})
