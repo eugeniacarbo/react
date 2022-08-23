@@ -1,105 +1,176 @@
-import { addDoc, collection, getFirestore } from "firebase/firestore"
-import { useCartContext } from "../../Context/CartContext"
-
-
+import { addDoc, collection, getFirestore } from "firebase/firestore";
+import { useCartContext } from "../../Context/CartContext";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link } from "react-router-dom";
 
 const Cart = () => {
+  const {
+    cartList,
+    vaciarCarrito,
+    eliminarProducto,
+    precioTotal,
+    cantidadTotal,
+  } = useCartContext();
 
-  const {cartList, vaciarCarrito, eliminarProducto, precioTotal} = useCartContext()
-
-  //Función para guardar la orden en la base de datos
+  //Guardar la orden en la base de datos
 
   /// Setear la orden
 
   const guardarOrden = async (e) => {
-    e.preventDefault()
-    
-    const fecha = new Date()
-    const order = {}
-    order.buyer = {email: "ecarbo16@gmail.com", name: "El Refugio", phone: "2914022904", date: fecha}
+    e.preventDefault();
 
-    order.items = cartList.map(prod => {
-        return {
-            product: prod.nombre,
-            id: prod.id,
-            price: prod.precio
-        }
-    })
-    
-    order.total = precioTotal()
+    const fecha = new Date();
+    const order = {};
+    order.buyer = {
+      email: "ecarbo16@gmail.com",
+      name: "Maria",
+      phone: "154022904",
+      date: fecha,
+    };
+
+    order.items = cartList.map((prod) => {
+      return {
+        product: prod.nombre,
+        id: prod.id,
+        price: prod.precio,
+      };
+    });
+
+    order.total = precioTotal();
 
     //// Guardar la orden en la base de datos
 
-
-    const db = getFirestore()
-    const queryOrders = collection(db, "orders")
+    const db = getFirestore();
+    const queryOrders = collection(db, "orders");
     addDoc(queryOrders, order)
-    .then(resp => Swal.fire('Su orden ha sido generada con el identificador: ' + resp.id + " \n Revisa tu email para el seguimiento de tu reserva."), console.log(order))
-    .catch(err => console.log(err))
-    .finally(() => vaciarCarrito())  
-
-  }
-  
+      .then(
+        (resp) =>
+          Swal.fire(
+            "Su reserva ha sido generada con el identificador: " +
+              resp.id +
+              " Revisa tu email, te enviaremos tu boucher."
+          ),
+        console.log(order)
+      )
+      .catch((err) => console.log(err))
+      .finally(() => vaciarCarrito());
+  };
 
   return (
-      <div className="container-md cartContainer">
+    <>
+      {cartList == 0 ? (
+        <div className="containerCarritoVacio">
+          <h1>Tu carrito está vacío. 
+          <FontAwesomeIcon icon={faFrown} />
+          </h1>
+          <Link to="/">
+                    <button className="btn btn-outline-dark btn-block mt-5">
+                        Ir al inicio.
+                    </button>
+                    </Link>
+          </div>
+            ) : (
+              <div className="container-md cartContainer">
         <div className="row">
-          <div className="col-sm">" "</div>
+          <div className="col-sm">
+            <h2 className="mt-3">
+              Carrito{" "}
+              <span className="iconosFa">
+                <FontAwesomeIcon icon={faCartShopping} />
+              </span>
+            </h2>{" "}
+          </div>
         </div>
-        <div className="row">
-          <div className="col-sm"><h2>Carrito.</h2></div>
+        <div className="row barraCarrito">
+          <div className="col-sm">
+            <span className="fw-semibold">
+              {cantidadTotal() !== 0 &&
+                ` Tienes: ${cantidadTotal()} reservas en tu carrito.`}
+            </span>
+          </div>
+          <div className="col-sm">
+            {cartList == 0 ? (
+              ""
+            ) : (
+              <button
+                className="btn btn-outline-danger mb-2 btn-sm"
+                onClick={vaciarCarrito}
+              >
+                {" "}
+                Vaciar Carrito.{" "}
+              </button>
+            )}
+          </div>
         </div>
-        <div className="row">
-          <div className="col-md-6">Checkout de productos
+        <div className="row mt-3">
+          <div className="col-md-6">
+            <p className="fw-semibold">Checkout de vacaciones.</p>
             <div className="col checkout">
-            <ul className="mt-4">
-          {cartList.map(item => (
-              <li key={item.id}>
-                <div className="listProductos mt-5">
-                  <h3>
-                    {item.nombre}
-                  </h3>
-                </div>
-              </li>
-            ))}
-          </ul>
+              <ul className="">
+                {cartList.map((item) => (
+                  <li key={item.id}>
+                    <div className="listProductos mt-5">
+                      <h3>{item.nombre}</h3>
+                    </div>
+                  </li>
+                ))}
+              </ul>
             </div>
-            <div className="col checkout mt-5">
-            <h5>  { precioTotal() !== 0 && `Precio Total: ${ precioTotal() } $`} </h5>
+            <div className="col checkoutText mt-5">
+              <h5>
+                {" "}
+                {precioTotal() !== 0 && `Precio Total: ${precioTotal()} $`}{" "}
+              </h5>
             </div>
-            <div className="col checkout mt-5">
-              <button className="btn btn-success" onClick={guardarOrden}> Finalizar Compra </button>
+            <div className="col checkoutText mt-5">
+              {cartList == 0 ? (
+                ""
+              ) : (
+                <button className="btn btn-success" onClick={guardarOrden}>
+                  {" "}
+                  Finalizar Compra{" "}
+                </button>
+              )}
             </div>
           </div>
-          <div className="col-md-6"> <p className="textoCarrito font-weight-bold">Vacaciones seleccionadas</p>
-          <button className="btn btn-outline-danger" onClick={vaciarCarrito}> Vaciar Carrito. </button>
-          <ul className="mt-4">
-          {cartList.map(item => (
-              <li key={item.id}>
-                <div className="card">
-                <div className="card-body">
-                  
-                  <img src={item.img} alt='' className='w-50' />
-                  <button className="btn btn-danger m-2" onClick={ () => eliminarProducto(item.id) }>X</button>                                                        
-                </div>
-                  <div className="card-body">
-                    <p> {item.nombre }</p>
-                    <p> Cantidad: {item.cantidad}</p>
-                    <p>Precio: {item.precio * item.cantidad} $ </p>
+          <div className="col-md-6">
+            {" "}
+            <p className="textoCarrito fw-semibold">Vacaciones seleccionadas:</p>
+            <div className="contenedorCarroCards">
+            <ul>
+              {cartList.map((item) => (
+                <li key={item.id}>
+                  <div className="card cardCarrito">
+                    <div className="card-body">
+                      <Link to={`/detail/${item.id}`}>
+                      <img src={item.img} alt="" className="w-25" />
+                      </Link>
+                      <button
+                        className="btn btn-danger m-2 btn-sm"
+                        onClick={() => eliminarProducto(item.id)}
+                      >
+                        X
+                      </button>
+                    </div>
+                    <div>
+                      <p className="p-2"> {item.nombre}</p>
+                      <p> Cantidad: {item.cantidad}</p>
+                      <p>Precio: {item.precio * item.cantidad} $ </p>
+                    </div>
                   </div>
-                </div>
-              </li>
-            ))}
-          </ul>
+                </li>
+              ))}
+            </ul>
+            </div>
           </div>
         </div>
         <div className="row">
-          <div className="col-md-12">
-            Aceptamos Visa y Mastercard
-          </div>
+          <div className="col-md-12 mt-5">Aceptamos todas las tarjetas</div>
         </div>
       </div>
-  )
-}
+            )}
+    </>
+  );
+};
 
-export default Cart
+export default Cart;
