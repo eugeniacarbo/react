@@ -16,7 +16,7 @@ const Cart = () => {
     
     const fecha = new Date()
     const order = {}
-    order.buyer = {email: "elrefugiosauce@gmail.com", name: "El Refugio", phone: "2914022904", date: fecha}
+    order.buyer = {email: "ecarbo16@gmail.com", name: "El Refugio", phone: "2914022904", date: fecha}
 
     order.items = cartList.map(prod => {
         return {
