@@ -1,7 +1,5 @@
-import React, {useState} from 'react'
 import Cartwidget from '../CartWidget/Cartwidget'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {faDesktop, faKeyboard, faMemory, faMicrochip} from '@fortawesome/free-solid-svg-icons'
 import { NavLink } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import { useCartContext } from '../../Context/CartContext'
@@ -9,6 +7,8 @@ import { useCartContext } from '../../Context/CartContext'
 
 
 const NavBar = () => {
+     
+       const { cantidadTotal } = useCartContext()
 
   return (
     <header className='shadow-sm'>
