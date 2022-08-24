@@ -3,6 +3,11 @@
   --fontsecundary: 'Oswald', sans-serif;
 }
 
+
+li {
+  list-style: none;
+}
+
 body {
   box-sizing: border-box;
   text-align: center;
@@ -21,6 +26,7 @@ body {
   animation: gradient 6s linear infinite;
   height: 3px;
 }
+
 @keyframes gradient {
 0% {
     background-position: 0 0;
@@ -129,10 +135,6 @@ body {
   font-size: 0.9rem;
 }
 
-.imagenCarrito {
-  width: 200px;
-}
-
 .spinner {
   border: 15px solid rgba(0, 0, 0, .1);
   width: 100px;
@@ -144,6 +146,70 @@ body {
 
   animation: spin 1s linear infinite;
 }
+
+.imagenCarrito {
+  width: 150px;
+}
+
+.textoCarrito {
+  color: #8F3838;
+}
+
+.checkout {
+  text-align: center;
+  margin-top: 2.7rem;
+  height: 55vh;
+  border-top: solid black 1px;
+  border-bottom: solid black 1px;
+  overflow: auto;
+}
+
+.checkout::-webkit-scrollbar {
+  width: 7px;
+}
+
+.checkout::-webkit-scrollbar-thumb {
+  background: rgb(114, 114, 255);
+  border-radius: 7px;
+}
+
+.listaCheckout {
+  border-top: solid black 1px;
+}
+
+.contenedorCarroCards {
+  height: 70vh;
+  overflow: auto;
+}
+
+.contenedorCarroCards::-webkit-scrollbar {
+  width: 7px;
+}
+
+.contenedorCarroCards::-webkit-scrollbar-thumb {
+  background: rgb(114, 114, 255);
+  border-radius: 7px;
+}
+
+
+.cantidadCarrito {
+  color: rgb(134, 2, 2);
+  float: left;
+  margin-right: 10px;
+  text-shadow: 2px 5px 2px rgba(0, 0, 0, 0.23);
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.containerCarritoVacio {
+  margin-top: 20%;
+  margin-bottom: 20%;
+}
+
+.card-title {
+  text-shadow: 0px 5px 5px rgba(150, 150, 150, 0.47);
+}
+
 
 @keyframes spin {
   0% {
@@ -166,6 +232,9 @@ body {
 .imgDetail {
   margin-top: 100px;
 }
+
+
+/* Media Q */
 
 @media screen and (max-width: 1921px) {
 
