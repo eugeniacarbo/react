@@ -10,12 +10,11 @@ const Item = ({ prod }) => {
     const {agregarCarrito} = useCartContext()
     const [toCart, setTocart] = useState(true)
 
-    const onAdd = (cant) => {
-        console.log(`La cantidad es:  ${cant}`)
+   const onAdd = (cant) => {
         agregarCarrito({...prod, cantidad: cant})
         setTocart(false)
       }
-
+   
   return (
       <div            
           className='col-md-4 p-1'
@@ -42,9 +41,6 @@ const Item = ({ prod }) => {
                     <ItemCount initial={1} stock={prod.stock} onAdd={onAdd}></ItemCount>
                     :
                     <Link to="/Cart">
-                        {/* <div>
-                            <h1> Usted ha seleccionado sus proximas vacaciones</h1>
-                        </div> */}
                     <button className="btn btn-outline-dark btn-block">
                     Ir al carrito.
                     </button>
