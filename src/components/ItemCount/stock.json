@@ -1,40 +1,51 @@
+
 [{
-        "precio": 20000,
-        "id": 1,
-        "title": "Promo finde fuera de temporada",
-        "thumbnailUrl": "https://picsum.photos/id/301/600"
-    },
-    {
-        "precio": 90000,
-        "id": 2,
-        "title": "Promo finde con 6 amigos",
-        "thumbnailUrl": "https://picsum.photos/id/390/600"
-    },
-    {
-        "precio": 25000,
-        "id": 3,
-        "title": "Promo fiestas",
-        "thumbnailUrl": "https://picsum.photos/id/407/600"
-    },
-    {
-        "precio": 28000,
-        "id": 4,
-        "title": "Promo relax finde largo",
-        "thumbnailUrl": "https://picsum.photos/id/449/600"
-    },
-    {
-        "precio": 15000,
-        "id": 6,
-        "title": "Promo solari",
-        "thumbnailUrl": "https://picsum.photos/id/447/600"
-    },
-    {
-        "precio": 30000,
-        "id": 1,
-        "title": "Promo en pareja",
-        "thumbnailUrl": "https://picsum.photos/id/1083/600"
-    }
-
-
+    "id": 1,
+    "marca": "El Refugio 1",
+    "categoría": "promos",
+    "precio": 15000,
+    "nombre": "Promo solari",
+    "img": "https://picsum.photos/id/447/600"
+},
+{
+    "id": 2,
+    "marca": "El Refugio 1",
+    "categoría": "promos",
+    "precio": 28000,
+    "nombre": "Promo relax finde largo",
+    "img": "https://picsum.photos/id/449/600"
+},
+{
+    "id": 3,
+    "marca": "El Refugio 2",
+    "categoría": "promos",
+    "precio": 25000,
+    "nombre": "Promo fiestas",
+    "img": "https://picsum.photos/id/407/600"
+},
+{
+    "id": 4,
+    "marca": "El Refugio 2",
+    "categoría": "promos",
+    "precio": 15000,
+    "nombre": "Promo finde con 6 amigos",
+    "img": "https://picsum.photos/id/390/600"
+},
+{
+    "id": 5,
+    "marca": "El Refugio 1",
+    "categoría": "promos",
+    "precio": 30000,
+    "nombre": "Promo en pareja",
+    "img": "https://picsum.photos/id/1083/600"
+},
+                 {
+    "id": 6,
+    "marca": "El Refugio 1",
+    "categoría": "promos",
+    "precio": 2500,
+    "nombre": "Promo finde fuera de temporada",
+    "img": "https://picsum.photos/id/301/600"
+}
 
 ]
