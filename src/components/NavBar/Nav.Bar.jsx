@@ -1,7 +1,5 @@
 import Cartwidget from '../CartWidget/Cartwidget'
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import { NavLink } from 'react-router-dom'
-import { Link } from 'react-router-dom'
+import { NavLink, Link } from 'react-router-dom'
 import { useCartContext } from '../../Context/CartContext'
 
 
@@ -27,29 +25,30 @@ const NavBar = () => {
                 <ul className="navbar-nav m-auto mb-2 mb-lg-0 navLinks">
                     <li className="nav-item me-2">
                      <NavLink className='nav-link' to='/categoria/promociones'>Promo finde fuera de temporada</NavLink>
-                    
-                        <img className='iconos' src="https://picsum.photos/id/301/600" alt="" />
+                    <img className='iconos' src="https://picsum.photos/id/301/600" alt="" />
                     </li>
+
                     <li className="nav-item me-2">
                      <NavLink className='nav-link' to='/categoria/amigos'>Vacaciones con amigos</NavLink>
-                   
-                    <span className='iconosFa'><FontAwesomeIcon icon={faMicrochip}/></span>
+                     <img className='iconos' src="https://picsum.photos/id/390/600" alt="" />
                     </li>
+
                     <li className="nav-item me-2">
                      <NavLink className='nav-link' to='/categoria/familia'>Promo en familia</NavLink>
-                   
-                    <img className='iconos' src="https://picsum.photos/id/390/600" alt="" />
+                     <img className='iconos' src="https://picsum.photos/id/390/600" alt="" />
                     </li>
+
                     <li className="nav-item me-2">
                      <NavLink className='nav-link' to='/categoria/Pareja'>Promociones en pareja</NavLink>
-                    
                     <img className='iconos' src="https://picsum.photos/id/407/600" alt="" />
-                    </li>
+                    </li> 
+
                     <li className="nav-item me-2">
                      <NavLink className='nav-link' to='/categoria/solo'>Vacaciones solo</NavLink>
-                    
                     <img className='iconos' src="https://picsum.photos/id/449/600" alt="" />
                     </li>
+
+                    
                     
            </ul>
                 </div>
