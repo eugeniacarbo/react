@@ -38,7 +38,7 @@ let productos = [{
         nombre: "Promo en pareja",
         img: "https://picsum.photos/id/1083/600"
     },
-                     {
+    {
         id: "6",
         marca: "El Refugio 1",
         categoría: "promos",
@@ -46,12 +46,12 @@ let productos = [{
         nombre: "Promo finde fuera de temporada",
         img: "https://picsum.photos/id/301/600"
     },
-   
+
 ]
-export const getFetch = (id) => {   
-    
-    return new Promise((resolve, reject)=> {
-        setTimeout(()=>{
+export const getFetch = (id) => {
+
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
             if (id) {
                 resolve(productos.find(producto => producto.id === id))
             } else {
