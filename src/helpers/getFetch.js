@@ -1,42 +1,50 @@
 let productos = [{
         id: "1",
         marca: "El Refugio 1",
-        categoría: "promociones",
+        categoría: "promos",
         precio: 15000,
-        nombre: "Promo finde fuera de temporada",
-        img: ""
+        nombre: "Promo solari",
+        img: "https://picsum.photos/id/447/600"
     },
     {
         id: "2",
-        marca: "El Refugio 2",
-        categoría: "amigos",
-        precio: 25000,
-        nombre: "Vacaciones con amigo",
-        img: ""
+        marca: "El Refugio 1",
+        categoría: "promos",
+        precio: 28000,
+        nombre: "Promo relax finde largo",
+        img: "https://picsum.photos/id/449/600"
     },
     {
         id: "3",
         marca: "El Refugio 2",
-        categoría: "familia",
-        precio: 35000,
-        nombre: "Promo en familia",
-        img: ""
+        categoría: "promos",
+        precio: 25000,
+        nombre: "Promo fiestas",
+        img: "https://picsum.photos/id/407/600"
     },
     {
         id: "4",
-        marca: "El Refugio 1",
-        categoría: "Pareja",
+        marca: "El Refugio 2",
+        categoría: "promos",
         precio: 15000,
-        nombre: "Promociones en pareja",
-        img: ""
+        nombre: "Promo finde con 6 amigos",
+        img: "https://picsum.photos/id/390/600"
     },
     {
         id: "5",
         marca: "El Refugio 1",
-        categoría: "solo",
-        precio: 10000,
-        nombre: "Vacaciones solo",
-        img: ""
+        categoría: "promos",
+        precio: 30000,
+        nombre: "Promo en pareja",
+        img: "https://picsum.photos/id/1083/600"
+    },
+                     {
+        id: "6",
+        marca: "El Refugio 1",
+        categoría: "promos",
+        precio: 2500,
+        nombre: "Promo finde fuera de temporada",
+        img: "https://picsum.photos/id/301/600"
     },
    
 ]
