@@ -1,9 +1,20 @@
 import { addDoc, collection, getFirestore } from "firebase/firestore";
 import { useCartContext } from "../../Context/CartContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCartShopping, faFrown } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 const Cart = () => {
+
+  const [formData, setFormData] = useState({
+    email:'', 
+    name:'', 
+    phone:'',
+    rEmail:'',
+    Date: new Date(),
+})
+
   const {
     cartList,
     vaciarCarrito,
@@ -12,49 +23,61 @@ const Cart = () => {
     cantidadTotal,
   } = useCartContext();
 
-  //Guardar la orden en la base de datos
-
-  /// Setear la orden
 
   const guardarOrden = async (e) => {
-    e.preventDefault();
+    if (formData.email.length == 0 || formData.name.length == 0 || formData.phone.length == 0 || formData.rEmail.length == 0) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops algo salio mal...',
+        text: 'Todos los campos son obligatorios para hacer la reserva.',
+      });
+    }else {
+      e.preventDefault();
 
-    const fecha = new Date();
     const order = {};
-    order.buyer = {
-      email: "ecarbo16@gmail.com",
-      name: "Maria",
-      phone: "154022904",
-      date: fecha,
-    };
+    order.buyer = formData
 
     order.items = cartList.map((prod) => {
       return {
         product: prod.nombre,
         id: prod.id,
-        price: prod.precio,
+        price_unit: prod.precio,
+        price: (prod.precio * prod.cantidad),
+        quantity: prod.cantidad,
       };
     });
 
     order.total = precioTotal();
 
-    //// Guardar la orden en la base de datos
+    //// Guardar la reserva en la base de datos
 
     const db = getFirestore();
     const queryOrders = collection(db, "orders");
     addDoc(queryOrders, order)
-      .then(
-        (resp) =>
+      .then((resp) =>
           Swal.fire(
-            "Su reserva ha sido generada con el identificador: " +
+            "Su reserva ha sido generada con el código: " +
               resp.id +
-              " Revisa tu email, te enviaremos tu boucher."
+              " \n Revisa tu email te enviaremos tu boucher."
           ),
-        console.log(order)
       )
       .catch((err) => console.log(err))
-      .finally(() => vaciarCarrito());
+      .finally(() => setFormData({
+        email:'', 
+        name:'', 
+        phone:'',
+        rEmail:'',
+    }), vaciarCarrito())
+    }
   };
+
+  const handleChange = (e) => {
+        
+    setFormData({
+        ...formData,
+        [e.target.name]: e.target.value
+    })
+}
 
   return (
     <>
@@ -85,7 +108,7 @@ const Cart = () => {
           <div className="col-sm">
             <span className="fw-semibold">
               {cantidadTotal() !== 0 &&
-                ` Tienes: ${cantidadTotal()} reservas en tu carrito.`}
+                ` Tienes: ${cantidadTotal()} productos en tu carrito.`}
             </span>
           </div>
           <div className="col-sm">
@@ -104,17 +127,48 @@ const Cart = () => {
         </div>
         <div className="row mt-3">
           <div className="col-md-6">
-            <p className="fw-semibold">Checkout de vacaciones.</p>
-            <div className="col checkout">
-              <ul className="">
-                {cartList.map((item) => (
-                  <li key={item.id}>
-                    <div className="listProductos mt-5">
-                      <h3>{item.nombre}</h3>
-                    </div>
-                  </li>
-                ))}
-              </ul>
+            <p className="fw-semibold fs-5">Datos del comprador:</p>
+            <div className="checkout">
+              <div className="formulario">
+              <form>
+            <div className="mb-3 container-md">
+                <label className="form-label">Nombre completo:</label>
+                <input type="text" 
+                            className="form-control" 
+                            name="name" 
+                            onChange={handleChange}
+                            placeholder="Ingrese su nombre completo."
+                            value={formData.name}></input>
+            </div>
+            <div className="mb-3 container-md">
+                <label className="form-label">Teléfono de contacto:</label>
+                <input type="text" 
+                            className="form-control" 
+                            name="phone" 
+                            onChange={handleChange}
+                            placeholder="Ingrese el teléfono"
+                            value={formData.phone}></input>
+            </div>
+            <div className="mb-3 container-md">
+                <label className="form-label">Correo electrónico:</label>
+                <input type="email" 
+                            className="form-control" 
+                            name="email" 
+                            onChange={handleChange}
+                            placeholder="Ingrese su correo electrónico." 
+                            value={formData.email}></input>
+            </div>
+            <div className="mb-3 container-md">
+                <label className="form-label">Repite tu correo electrónico:</label>
+                <input type="email" 
+                            className="form-control" 
+                            name="rEmail"                            
+                            placeholder="Ingrese su correo electrónico." 
+                            onChange={handleChange}
+                            value={formData.rEmail}></input>
+            </div>
+        </form>
+              </div>
             </div>
             <div className="col checkoutText mt-5">
               <h5>
@@ -135,7 +189,7 @@ const Cart = () => {
           </div>
           <div className="col-md-6">
             {" "}
-            <p className="textoCarrito fw-semibold">Vacaciones seleccionadas:</p>
+            <p className="textoCarrito fw-semibold fs-5">Tus vacaciones seleccionados:</p>
             <div className="contenedorCarroCards">
             <ul>
               {cartList.map((item) => (
@@ -165,7 +219,7 @@ const Cart = () => {
           </div>
         </div>
         <div className="row">
-          <div className="col-md-12 mt-5">Aceptamos todas las tarjetas</div>
+          <div className="col-md-12 mt-5">Aceptamos todos los medios de pago</div>
         </div>
       </div>
             )}
