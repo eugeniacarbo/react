@@ -76,6 +76,15 @@
   .iconoCart {
     width: 60px;
   }
+
+.iconoCart2 {
+  width: 30px;
+}
+
+.barraCarrito {
+  border-bottom: solid black 1px;
+  margin-bottom: 3rem;
+}
   
   #logoGU {
     width: 100px;
@@ -155,62 +164,48 @@
     color: #31652d;
   }
   
-  .checkout {
-    text-align: center;
-    margin-top: 2.7rem;
-    height: 55vh;
-    border-top: solid black 1px;
-    border-bottom: solid black 1px;
-    overflow: auto;
-  }
-  
-  .checkout::-webkit-scrollbar {
-    width: 7px;
-  }
-  
-  .checkout::-webkit-scrollbar-thumb {
-    background: rgb(114, 114, 255);
-    border-radius: 7px;
-  }
-  
-  .listaCheckout {
-    border-top: solid black 1px;
-  }
-  
-  .contenedorCarroCards {
-    height: 70vh;
-    overflow: auto;
-  }
-  
-  .contenedorCarroCards::-webkit-scrollbar {
-    width: 7px;
-  }
-  
-  .contenedorCarroCards::-webkit-scrollbar-thumb {
-    background: rgb(114, 114, 255);
-    border-radius: 7px;
-  }
-  
-  
-  .cantidadCarrito {
-    color: rgb(28, 24, 91);
-    float: left;
-    margin-right: 10px;
-    text-shadow: 2px 5px 2px rgba(0, 0, 0, 0.23);
-    font-size: 1.2rem;
-    font-weight: 500;
-  }
-  
-  .containerCarritoVacio {
-    margin-top: 20%;
-    margin-bottom: 20%;
-  }
-  
-  .card-title {
-    text-shadow: 0px 5px 5px rgba(150, 150, 150, 0.47);
-  }
-  
-  
+  .formulario {
+  margin-top: 140px;
+}
+
+.listaCheckout {
+  border-top: solid black 1px;
+}
+
+.contenedorCarroCards {
+  margin-top: 40px;
+  height: 55vh;
+  overflow: auto;
+}
+
+.contenedorCarroCards::-webkit-scrollbar {
+  width: 7px;
+}
+
+.contenedorCarroCards::-webkit-scrollbar-thumb {
+  background: rgb(114, 114, 255);
+  border-radius: 7px;
+}
+
+
+.cantidadCarrito {
+  color: rgb(134, 2, 2);
+  float: left;
+  margin-right: 10px;
+  text-shadow: 2px 5px 2px rgba(0, 0, 0, 0.23);
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.containerCarritoVacio {
+  margin-top: 20%;
+  margin-bottom: 20%;
+}
+
+.card-title {
+  text-shadow: 0px 5px 5px rgba(150, 150, 150, 0.47);
+}
+
   @keyframes spin {
     0% {
       transform: rotate(0deg);
@@ -297,3 +292,31 @@
     }
   
   }
+
+@media screen and (max-width: 1199px) {
+
+  .navLinks li a {
+    font-weight: 600;
+    font-size: 1.1rem;
+  }
+
+  #logoGU {
+    width: 95px;
+  }
+
+  .iconoCart {
+    width: 40px;
+  }
+
+}
+
+.iconoGitHub {
+  font-size: 2rem;
+  color: #020024;
+  padding: 10px;
+}
+
+.iconoGitHub:hover {
+  color: #020024;
+
+}
