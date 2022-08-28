@@ -4,7 +4,7 @@ let productos = [{
         categoría: "promos",
         precio: 15000,
         nombre: "Promo solari",
-        img: "https://picsum.photos/id/447/600"
+        img: "https://picsum.photos/id/447/600",
         stock: 15
     },
     {
@@ -13,7 +13,7 @@ let productos = [{
         categoría: "promos",
         precio: 28000,
         nombre: "Promo relax finde largo",
-        img: "https://picsum.photos/id/449/600"
+        img: "https://picsum.photos/id/449/600",
         stock: 10
     },
     {
@@ -22,7 +22,8 @@ let productos = [{
         categoría: "promos",
         precio: 25000,
         nombre: "Promo fiestas",
-        img: "https://picsum.photos/id/407/600"
+        img: "https://picsum.photos/id/407/600",
+        stock: 10
     },
     {
         id: "4",
@@ -30,7 +31,7 @@ let productos = [{
         categoría: "promos",
         precio: 15000,
         nombre: "Promo finde con 6 amigos",
-        img: "https://picsum.photos/id/390/600"
+        img: "https://picsum.photos/id/390/600",
         stock: 10
     },
     {
@@ -39,7 +40,7 @@ let productos = [{
         categoría: "promos",
         precio: 30000,
         nombre: "Promo en pareja",
-        img: "https://picsum.photos/id/1083/600"
+        img: "https://picsum.photos/id/1083/600",
         stock: 8
     },
     {
@@ -48,7 +49,7 @@ let productos = [{
         categoría: "promos",
         precio: 2500,
         nombre: "Promo finde fuera de temporada",
-        img: "https://picsum.photos/id/301/600"
+        img: "https://picsum.photos/id/301/600",
         stock: 10
     },
 
